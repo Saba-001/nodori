@@ -1,10 +1,12 @@
+import { Img } from "/src/components";
+
 export const DashboardFooter = () => {
   return (
     <footer className="bg-beige text-brown p-8 mx-40 mt-auto">
       <div className="grid grid-cols-4 gap-8 text-center">
         <div>
-          <img
-            src="/assets/images/Quality.png"
+          <Img
+            name="Quality"
             alt="High Quality"
             className="h-12 w-12 mx-auto"
           />
@@ -12,8 +14,8 @@ export const DashboardFooter = () => {
           <p>crafted from top materials</p>
         </div>
         <div>
-          <img
-            src="/assets/images/Warranty.png"
+          <Img
+            name="Warranty"
             alt="Warranty Protection"
             className="h-12 w-12 mx-auto"
           />
@@ -21,8 +23,8 @@ export const DashboardFooter = () => {
           <p>Over 2 years</p>
         </div>
         <div>
-          <img
-            src="/assets/images/Shipping.png"
+          <Img
+            name="Shipping"
             alt="Free Shipping"
             className="h-12 w-12 mx-auto"
           />
@@ -30,8 +32,8 @@ export const DashboardFooter = () => {
           <p>Order over 200 $</p>
         </div>
         <div>
-          <img
-            src="/assets/images/Support.png"
+          <Img
+            name="Support"
             alt="24/7 Support"
             className="h-12 w-12 mx-auto"
           />

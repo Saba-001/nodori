@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { products } from "/data"; // Adjust the import path as per your actual data location
+import { products } from "/data";
+import { Img } from "/src/components";
 
 export const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,8 +51,8 @@ export const Products = () => {
   // Render individual product items
   const renderItems = currentItems.map((item) => (
     <div key={item.id} className="border p-4 rounded-lg shadow-lg">
-      <img
-        src={item.iconUrl[0]}
+      <Img
+        name={item.iconNames[0]}
         alt={item.name}
         className="w-full h-48 object-cover mb-4"
       />

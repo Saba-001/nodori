@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { Img } from "/src/components";
 import { products } from "/data";
 
 export const DashboardHeader = () => {
@@ -35,10 +35,11 @@ export const DashboardHeader = () => {
     navigate(`/product/${id}`);
   };
 
+  console.log(process.env);
   return (
     <header className="bg-beige text-brown flex items-center justify-between p-4 shadow-md h-28">
       <div className="flex items-center space-x-4">
-        <img src="/assets/images/Logo.png" alt="Logo" className="h-10 w-10" />
+        <Img name="Logo" alt="Logo" className="h-10 w-10" />
         <span className="text-lg font-bold">HOMECRAFT.</span>
       </div>
       <div className="flex-grow flex justify-center px-4 relative">
@@ -103,7 +104,7 @@ export const DashboardHeader = () => {
                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
                   onClick={() => handleSearchResultClick(result.id)}
                 >
-                  <img
+                  <Img
                     src={result.iconUrl[0]}
                     alt={result.name}
                     className="h-6 w-6 mr-2"
@@ -117,21 +118,13 @@ export const DashboardHeader = () => {
       </div>
       <div className="flex items-center space-x-4">
         <button className="focus:outline-none">
-          <img
-            src="/assets/images/Favorites.png"
-            alt="Favorites"
-            className="h-6 w-6"
-          />
+          <Img name="Favorites" alt="Favorites" className="h-6 w-6" />
         </button>
         <button className="focus:outline-none">
-          <img src="/assets/images/Cart.png" alt="Cart" className="h-6 w-6" />
+          <Img name="Cart" alt="Cart" className="h-6 w-6" />
         </button>
         <button className="focus:outline-none" onClick={handleRegister}>
-          <img
-            src="/assets/images/Register.png"
-            alt="Account"
-            className="h-6 w-6"
-          />
+          <Img name="Register" alt="Account" className="h-6 w-6" />
         </button>
       </div>
     </header>

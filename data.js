@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    iconUrl: ["/assets/images/1.png"],
+    iconNames: ["1"],
     name: "Syltherine Cafe Chair",
     miniDescription: "A stylish and comfortable chair for cafes.",
     description: "A stylish and comfortable chair perfect for cafes.",
@@ -15,7 +15,7 @@ export const products = [
   },
   {
     id: 2,
-    iconUrl: ["/assets/images/2.png"],
+    iconNames: ["2"],
     name: "Leviosa Modern Dining Table",
     miniDescription: "A modern dining table perfect for contemporary homes.",
     description: "A sleek modern dining table ideal for contemporary homes.",
@@ -29,7 +29,7 @@ export const products = [
   },
   {
     id: 3,
-    iconUrl: ["/assets/images/3.png"],
+    iconNames: ["3"],
     name: "Nimbus Ergonomic Office Chair",
     miniDescription: "A comfortable and supportive office chair.",
     description:
@@ -44,7 +44,7 @@ export const products = [
   },
   {
     id: 4,
-    iconUrl: ["/assets/images/4.png"],
+    iconNames: ["4"],
     name: "Falcon Ergonomic Gaming Chair",
     miniDescription: "An ergonomic chair designed for gamers.",
     description:
@@ -59,7 +59,7 @@ export const products = [
   },
   {
     id: 5,
-    iconUrl: ["/assets/images/5.png"],
+    iconNames: ["5"],
     name: "Phoenix Luxury Recliner",
     miniDescription: "A luxurious recliner for relaxation.",
     description: "A luxurious recliner perfect for ultimate relaxation.",
@@ -73,7 +73,7 @@ export const products = [
   },
   {
     id: 6,
-    iconUrl: ["/assets/images/6.png"],
+    iconNames: ["6"],
     name: "Griffin Modern Bar Stool",
     miniDescription: "A stylish bar stool for modern spaces.",
     description:
@@ -88,7 +88,7 @@ export const products = [
   },
   {
     id: 7,
-    iconUrl: ["/assets/images/7.png"],
+    iconNames: ["7"],
     name: "Dragon Elegant Lounge Set",
     miniDescription: "An elegant lounge chair and sofa combo.",
     description: "An elegant lounge set featuring a chair and sofa combo.",
@@ -102,7 +102,7 @@ export const products = [
   },
   {
     id: 8,
-    iconUrl: ["/assets/images/8.png"],
+    iconNames: ["8"],
     name: "Eagle Classic Wooden Chair",
     miniDescription: "A classic wooden chair with a timeless design.",
     description: "A classic wooden chair with a timeless design.",
@@ -116,7 +116,7 @@ export const products = [
   },
   {
     id: 9,
-    iconUrl: ["/assets/images/9.png"],
+    iconNames: ["9"],
     name: "Hawk Contemporary Accent Chair",
     miniDescription: "A contemporary accent chair for any room.",
     description: "A contemporary accent chair suitable for any room.",
@@ -130,7 +130,7 @@ export const products = [
   },
   {
     id: 10,
-    iconUrl: ["/assets/images/10.png"],
+    iconNames: ["10"],
     name: "Raven Modern Swivel Chair",
     miniDescription: "A sleek swivel chair ideal for modern offices.",
     description: "A sleek swivel chair ideal for modern offices.",
@@ -144,7 +144,7 @@ export const products = [
   },
   {
     id: 11,
-    iconUrl: ["/assets/images/11.png"],
+    iconNames: ["11"],
     name: "Merlin Plush Armchair",
     miniDescription: "A plush armchair perfect for cozy corners.",
     description: "A plush armchair perfect for cozy corners.",
@@ -158,7 +158,7 @@ export const products = [
   },
   {
     id: 12,
-    iconUrl: ["/assets/images/1.png"],
+    iconNames: ["1"],
     name: "Goblin Minimalist Side Chair",
     miniDescription: "A minimalist side chair for additional seating.",
     description: "A minimalist side chair for additional seating.",
@@ -172,7 +172,7 @@ export const products = [
   },
   {
     id: 13,
-    iconUrl: ["/assets/images/3.png"],
+    iconNames: ["3"],
     name: "Elf Versatile Folding Chair",
     miniDescription: "A versatile folding chair for easy storage.",
     description: "A versatile folding chair for easy storage and use.",
@@ -186,7 +186,7 @@ export const products = [
   },
   {
     id: 14,
-    iconUrl: ["/assets/images/4.png"],
+    iconNames: ["4"],
     name: "Centaur Adjustable Desk Chair",
     miniDescription: "An adjustable desk chair for ergonomic work.",
     description: "An adjustable desk chair for comfortable and ergonomic work.",
@@ -200,7 +200,7 @@ export const products = [
   },
   {
     id: 15,
-    iconUrl: ["/assets/images/5.png"],
+    iconNames: ["5"],
     name: "Gryphon Retro Lounge Set",
     miniDescription: "A retro-style lounge chair and sofa combination.",
     description: "A retro-style lounge chair and sofa combination.",
@@ -214,7 +214,7 @@ export const products = [
   },
   {
     id: 16,
-    iconUrl: ["/assets/images/6.png"],
+    iconNames: ["6"],
     name: "Pegasus Luxurious Wingback Chair",
     miniDescription: "A luxurious wingback chair for elegant spaces.",
     description:
@@ -229,7 +229,7 @@ export const products = [
   },
   {
     id: 17,
-    iconUrl: ["/assets/images/7.png"],
+    iconNames: ["7"],
     name: "Phoenix Classic Rocking Chair",
     miniDescription: "A classic rocking chair for relaxing moments.",
     description: "A classic rocking chair for relaxing moments.",
@@ -243,7 +243,7 @@ export const products = [
   },
   {
     id: 18,
-    iconUrl: ["/assets/images/8.png"],
+    iconNames: ["8"],
     name: "Hydra Contemporary Bean Bag Chair",
     miniDescription: "A contemporary bean bag chair for casual seating.",
     description:
@@ -258,7 +258,7 @@ export const products = [
   },
   {
     id: 19,
-    iconUrl: ["/assets/images/9.png"],
+    iconNames: ["9"],
     name: "Unicorn Velvet Chaise Lounge",
     miniDescription: "A velvet chaise lounge for a touch of luxury.",
     description: "A luxurious velvet chaise lounge for elegant interiors.",
@@ -272,7 +272,7 @@ export const products = [
   },
   {
     id: 20,
-    iconUrl: ["/assets/images/2.png"],
+    iconNames: ["2"],
     name: "Phoenix Modern Sectional Sofa",
     miniDescription: "A modern sectional sofa for contemporary living rooms.",
     description:
@@ -287,7 +287,7 @@ export const products = [
   },
   {
     id: 21,
-    iconUrl: ["/assets/images/3.png"],
+    iconNames: ["3"],
     name: "Minotaur Rustic Coffee Table",
     miniDescription: "A rustic coffee table for cozy living rooms.",
     description:
@@ -302,7 +302,7 @@ export const products = [
   },
   {
     id: 22,
-    iconUrl: ["/assets/images/4.png"],
+    iconNames: ["4"],
     name: "Golem Industrial Bookshelf",
     miniDescription: "An industrial-style bookshelf for modern spaces.",
     description:
@@ -317,7 +317,7 @@ export const products = [
   },
   {
     id: 23,
-    iconUrl: ["/assets/images/5.png"],
+    iconNames: ["5"],
     name: "Satyr Mid-Century Dining Chair",
     miniDescription:
       "A mid-century modern dining chair for elegant dining rooms.",
@@ -333,7 +333,7 @@ export const products = [
   },
   {
     id: 24,
-    iconUrl: ["/assets/images/6.png"],
+    iconNames: ["6"],
     name: "Fairy Petite Vanity Table",
     miniDescription: "A petite vanity table perfect for compact spaces.",
     description: "A charming petite vanity table ideal for compact bedrooms.",
@@ -347,7 +347,7 @@ export const products = [
   },
   {
     id: 25,
-    iconUrl: ["/assets/images/7.png"],
+    iconNames: ["7"],
     name: "Cyclops Outdoor Lounge Chair",
     miniDescription: "A durable lounge chair designed for outdoor relaxation.",
     description:
@@ -362,7 +362,7 @@ export const products = [
   },
   {
     id: 26,
-    iconUrl: ["/assets/images/8.png"],
+    iconNames: ["8"],
     name: "Centaur Modern Writing Desk",
     miniDescription: "A sleek writing desk perfect for modern home offices.",
     description:
@@ -377,7 +377,7 @@ export const products = [
   },
   {
     id: 27,
-    iconUrl: ["/assets/images/9.png"],
+    iconNames: ["9"],
     name: "Phoenix Elegant Chaise Lounge",
     miniDescription: "An elegant chaise lounge for sophisticated spaces.",
     description:
@@ -392,7 +392,7 @@ export const products = [
   },
   {
     id: 28,
-    iconUrl: ["/assets/images/2.png"],
+    iconNames: ["2"],
     name: "Ogre Minimalist TV Stand",
     miniDescription: "A minimalist TV stand ideal for modern living rooms.",
     description:
@@ -407,7 +407,7 @@ export const products = [
   },
   {
     id: 29,
-    iconUrl: ["/assets/images/3.png"],
+    iconNames: ["3"],
     name: "Griffin Luxury King Bed",
     miniDescription: "A luxurious king-size bed for a restful sleep.",
     description:
@@ -422,7 +422,7 @@ export const products = [
   },
   {
     id: 30,
-    iconUrl: ["/assets/images/5.png"],
+    iconNames: ["5"],
     name: "Sphinx Modern Shoe Rack",
     miniDescription: "A modern shoe rack for organized entryways.",
     description:
