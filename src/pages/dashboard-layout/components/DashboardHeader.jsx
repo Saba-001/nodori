@@ -104,7 +104,7 @@ export const DashboardHeader = () => {
                   onClick={() => handleSearchResultClick(result.id)}
                 >
                   <Img
-                    src={result.iconUrl[0]}
+                    name={result.iconNames[0]}
                     alt={result.name}
                     className="h-6 w-6 mr-2"
                   />
