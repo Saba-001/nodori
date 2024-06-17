@@ -1,5 +1,3 @@
-import { Router } from "./pages/Router";
-
 function App() {
   return <>12312312</>;
 }
