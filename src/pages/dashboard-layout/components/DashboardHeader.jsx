@@ -1,37 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const data = [
-  {
-    id: 1,
-    iconUrl: ["/assets/images/1.png"],
-    name: "Syltherine Cafe Chair",
-    miniDescription: "A stylish and comfortable chair for cafes.",
-    description: "A stylish and comfortable chair perfect for cafes.",
-    currentPrice: 250,
-    oldPrice: 357,
-    categories: ["chair"],
-    size: "85cm x 45cm x 45cm",
-    material: "High-quality wood and cushioned seat",
-    type: "Stylish",
-    room: "Cafe",
-  },
-  {
-    id: 2,
-    iconUrl: ["/assets/images/2.png"],
-    name: "Leviosa Modern Dining Table",
-    miniDescription: "A modern dining table perfect for contemporary homes.",
-    description: "A sleek modern dining table ideal for contemporary homes.",
-    currentPrice: 450,
-    oldPrice: 599,
-    categories: ["table"],
-    size: "150cm x 90cm x 75cm",
-    material: "Tempered glass top with metal legs",
-    type: "Modern",
-    room: "Dining Room",
-  },
-  // Add more data as needed
-];
+import { products } from "/data";
 
 export const DashboardHeader = () => {
   const navigate = useNavigate();
@@ -48,8 +18,12 @@ export const DashboardHeader = () => {
     setSearchTerm(term);
     setShowResults(true);
     if (term) {
-      const results = data.filter((item) =>
-        item.name.toLowerCase().includes(term.toLowerCase())
+      const results = products.filter(
+        (item) =>
+          item.name.toLowerCase().includes(term.toLowerCase()) ||
+          item.material.toLowerCase().includes(term.toLowerCase()) ||
+          item.type.toLowerCase().includes(term.toLowerCase()) ||
+          item.room.toLowerCase().includes(term.toLowerCase())
       );
       setSearchResults(results);
     } else {
