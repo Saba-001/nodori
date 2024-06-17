@@ -35,7 +35,6 @@ export const DashboardHeader = () => {
     navigate(`/product/${id}`);
   };
 
-  console.log(process.env);
   return (
     <header className="bg-beige text-brown flex items-center justify-between p-4 shadow-md h-28">
       <div className="flex items-center space-x-4">
