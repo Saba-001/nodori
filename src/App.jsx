@@ -1,5 +1,7 @@
+import { Router } from "./pages/Router";
+
 function App() {
-  return <>12312312</>;
+  return <Router />;
 }
 
 export default App;
