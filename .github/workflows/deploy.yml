@@ -30,7 +30,7 @@ jobs:
           node-version: 20
           cache: "npm"
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Set environment variables
         run: echo "VITE_BASE_URL=/nodori" >> $GITHUB_ENV
