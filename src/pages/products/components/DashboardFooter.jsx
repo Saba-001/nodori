@@ -1,4 +1,5 @@
 import { Img } from "/src/components";
+import { Link } from "react-router-dom";
 
 export const DashboardFooter = () => {
   return (
@@ -10,8 +11,8 @@ export const DashboardFooter = () => {
             alt="High Quality"
             className="h-12 w-12 mx-auto"
           />
-          <p className="mt-2 font-bold">High Quality</p>
-          <p>crafted from top materials</p>
+          <p className="mt-2 font-bold">უმაღლესი ხარისხი</p>
+          <p>დამზადებული უმაღლესი ხარისხის მატერიისგან</p>
         </div>
         <div>
           <Img
@@ -19,8 +20,8 @@ export const DashboardFooter = () => {
             alt="Warranty Protection"
             className="h-12 w-12 mx-auto"
           />
-          <p className="mt-2 font-bold">Warranty Protection</p>
-          <p>Over 2 years</p>
+          <p className="mt-2 font-bold">საგარანტიო დაზღვევა</p>
+          <p>2 წლამდე</p>
         </div>
         <div>
           <Img
@@ -28,8 +29,8 @@ export const DashboardFooter = () => {
             alt="Free Shipping"
             className="h-12 w-12 mx-auto"
           />
-          <p className="mt-2 font-bold">Free Shipping</p>
-          <p>Order over 200 $</p>
+          <p className="mt-2 font-bold">უფასო მიწოდება</p>
+          <p>200+ ლარის შენაძენის შემთხვევაში</p>
         </div>
         <div>
           <Img
@@ -37,34 +38,24 @@ export const DashboardFooter = () => {
             alt="24/7 Support"
             className="h-12 w-12 mx-auto"
           />
-          <p className="mt-2 font-bold">24 / 7 Support</p>
-          <p>Dedicated support</p>
+          <p className="mt-2 font-bold">8 / 5 კონტაქტი</p>
+          <p>ჩვენი საკონტაქტო ფორმის დახმარებით</p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between mt-8 text-sm space-y-4 md:space-y-0 md:space-x-8">
+      <div className="flex justify-evenly py-20 text-sm">
         <div>
-          <p className="font-bold mb-2 text-xl text-black">HOMECRAFT.</p>
-          <p className="text-slate-800">nutsubidze street 95</p>
-          <p className="text-slate-800">Tbilisi 0186</p>
+          <p className="font-bold mb-2 text-xl text-black">ჰოუმკრაფტი</p>
+          <p className="text-slate-800">ნუცუბიძის ქუჩა 95</p>
+          <p className="text-slate-800">თბილისი 0186</p>
         </div>
-        <div>
-          <p className="font-bold mb-2 text-lg text-slate-800">Links</p>
-          <p className="text-black">Get Inspired</p>
-          <p className="text-black">Rooms</p>
-          <p className="text-black">Products</p>
-          <p className="text-black">Custom Craft</p>
-        </div>
-        <div>
-          <p className="font-bold mb-2 text-lg text-slate-800">Help</p>
-          <p className="text-black"> Payment Options</p>
-          <p className="text-black">Warranty</p>
-          <p className="text-black">Delivery</p>
-          <p className="text-black">Privacy Policies</p>
-        </div>
-        <div>
-          <p className="font-bold mb-2 text-lg text-slate-800">Company</p>
-          <p className="text-black">About us</p>
-          <p className="text-black">Contact us</p>
+        <div className="flex flex-col">
+          <p className="font-bold mb-2 text-lg text-slate-800">ლინკები</p>
+          <Link
+            className="hover:underline font-[Satoshi-medium]"
+            to="/contact-us"
+          >
+            დაგვიკავშირდით
+          </Link>
         </div>
       </div>
     </footer>

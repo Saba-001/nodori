@@ -38,7 +38,7 @@ export const Navigation = () => {
         <div className="relative w-full max-w-lg">
           <input
             type="text"
-            placeholder="Search"
+            placeholder="მოძებნეთ სასურველი ავეჯი..."
             className="px-4 py-2 w-full bg-white text-gray-700 rounded-full focus:outline-none"
             value={searchTerm}
             onChange={handleSearchChange}
