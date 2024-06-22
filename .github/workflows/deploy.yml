@@ -33,7 +33,7 @@ jobs:
         run: npm install
 
       - name: Set environment variables
-        run: echo "VITE_BASE_URL=/nodori" >> $GITHUB_ENV
+        run: echo "VITE_BASE_URL=/nodori/" >> $GITHUB_ENV
       - name: Build
         run: npm run build
       - name: Setup Pages
