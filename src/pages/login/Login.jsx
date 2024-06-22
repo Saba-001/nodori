@@ -1,99 +1,85 @@
-import { useState } from "react";
-import { products } from "/data"; // Adjust the import path as per your actual data location
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";  // Import useLocation and useNavigate
 
-export const Login = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+export const Login = ({ registeredUsers }) => {  // Pass registeredUsers as prop
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  // Calculate current items based on currentPage
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+  // Check if there's an error message from the previous attempt
+  const errorMessage = location.state ? location.state.error : "";
 
-  // Handler for pagination click
-  const handleClick = (number) => {
-    setCurrentPage(number);
+  // Handle email input change
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
-  // Previous page handler
-  const goToPreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+  // Handle password input change
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Find matching email and password in registeredUsers
+    const user = registeredUsers.find(user => user.email === email && user.password === password);
+    if (user) {
+      // Navigate to success page or dashboard
+      navigate("/dashboard");
+    } else {
+      // Set error message if login fails
+      setError("Invalid email or password. Please try again.");
     }
   };
-
-  // Next page handler
-  const goToNextPage = () => {
-    if (currentPage < Math.ceil(products.length / itemsPerPage)) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  // Generate page numbers for pagination
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(products.length / itemsPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  // Render pagination buttons
-  const renderPageNumbers = pageNumbers.map((number) => (
-    <li
-      key={number}
-      className={`mx-1 cursor-pointer ${
-        currentPage === number ? "text-blue-600 font-bold" : "text-gray-500"
-      }`}
-    >
-      <button onClick={() => handleClick(number)}>{number}</button>
-    </li>
-  ));
-
-  // Render individual product items
-  const renderItems = currentItems.map((item) => (
-    <div key={item.id} className="border p-4 rounded-lg shadow-lg">
-      <img
-        src={item.iconUrl[0]}
-        alt={item.name}
-        className="w-full h-48 object-cover mb-4"
-      />
-      <h2 className="text-xl font-bold">{item.name}</h2>
-      <p className="text-gray-600">{item.miniDescription}</p>
-      <p className="mt-2 text-gray-800">
-        ${item.currentPrice}{" "}
-        {item.oldPrice && (
-          <span className="line-through text-gray-500">${item.oldPrice}</span>
-        )}
-      </p>
-      <p className="mt-2">{item.description}</p>
-    </div>
-  ));
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Products</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {renderItems}
+    <div className="flex items-center justify-center min-h-screen bg-beige">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-3xl font-bold mb-6 text-center text-brown">Log In</h1>
+        {errorMessage && <p className="text-red-500 text-center mb-4">{errorMessage}</p>}
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+        <form onSubmit={handleSubmit} className="mb-6">
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+              Email:
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
+              Password:
+            </label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
+            >
+              Log In
+            </button>
+          </div>
+        </form>
       </div>
-      <ul className="flex justify-center mt-4">
-        <li className="mx-1 cursor-pointer">
-          <button
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-            className="text-blue-600"
-          >
-            Previous
-          </button>
-        </li>
-        {renderPageNumbers}
-        <li className="mx-1 cursor-pointer">
-          <button
-            onClick={goToNextPage}
-            disabled={currentPage === Math.ceil(products.length / itemsPerPage)}
-            className="text-blue-600"
-          >
-            Next
-          </button>
-        </li>
-      </ul>
     </div>
   );
 };
+
+export default Login;

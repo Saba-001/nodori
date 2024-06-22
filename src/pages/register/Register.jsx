@@ -1,99 +1,96 @@
-import { useState } from "react";
-import { products } from "/data"; // Adjust the import path as per your actual data location
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";  // Import useNavigate
 
 export const Register = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const [newEmail, setNewEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const navigate = useNavigate();  // Initialize useNavigate
 
-  // Calculate current items based on currentPage
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
-
-  // Handler for pagination click
-  const handleClick = (number) => {
-    setCurrentPage(number);
+  // Handle email input change
+  const handleEmailChange = (e) => {
+    setNewEmail(e.target.value);
   };
 
-  // Previous page handler
-  const goToPreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
+  // Handle password input change
+  const handlePasswordChange = (e) => {
+    setNewPassword(e.target.value);
   };
 
-  // Next page handler
-  const goToNextPage = () => {
-    if (currentPage < Math.ceil(products.length / itemsPerPage)) {
-      setCurrentPage(currentPage + 1);
-    }
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Implement your logic for handling form submission
+    console.log("Submitted:", newEmail, newPassword);
+    // After successful registration, navigate to the login page and pass the email and password
+    navigate("/login", { state: { email: newEmail, password: newPassword } });
   };
 
-  // Generate page numbers for pagination
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(products.length / itemsPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  // Render pagination buttons
-  const renderPageNumbers = pageNumbers.map((number) => (
-    <li
-      key={number}
-      className={`mx-1 cursor-pointer ${
-        currentPage === number ? "text-blue-600 font-bold" : "text-gray-500"
-      }`}
-    >
-      <button onClick={() => handleClick(number)}>{number}</button>
-    </li>
-  ));
-
-  // Render individual product items
-  const renderItems = currentItems.map((item) => (
-    <div key={item.id} className="border p-4 rounded-lg shadow-lg">
-      <img
-        src={item.iconUrl[0]}
-        alt={item.name}
-        className="w-full h-48 object-cover mb-4"
-      />
-      <h2 className="text-xl font-bold">{item.name}</h2>
-      <p className="text-gray-600">{item.miniDescription}</p>
-      <p className="mt-2 text-gray-800">
-        ${item.currentPrice}{" "}
-        {item.oldPrice && (
-          <span className="line-through text-gray-500">${item.oldPrice}</span>
-        )}
-      </p>
-      <p className="mt-2">{item.description}</p>
-    </div>
-  ));
+  // Handle Facebook login click
+  const handleFacebookLogin = () => {
+    window.FB.login(function(response) {
+      if (response.authResponse) {
+        console.log("Facebook login succeeded:", response);
+        // You can now handle the response and integrate with your backend
+      } else {
+        console.log("Facebook login failed:", response);
+      }
+    }, { scope: 'email' }); // Specify additional permissions here if needed
+  };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Products</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {renderItems}
+    <div className="flex items-center justify-center min-h-screen bg-beige ">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-3xl font-bold mb-6 text-center text-brown">Sign Up</h1>
+        <form onSubmit={handleSubmit} className="mb-6">
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+              Email:
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={newEmail}
+              onChange={handleEmailChange}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
+              Password:
+            </label>
+            <input
+              type="password"
+              id="password"
+              value={newPassword}
+              onChange={handlePasswordChange}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
+            >
+              Sign Up
+            </button>
+            <button
+              type="button"
+              onClick={handleFacebookLogin}
+              className="bg-blue-700 text-white px-4 py-2 rounded-md flex items-center hover:bg-blue-800 transition duration-300"
+            >
+              <img className="w-6 h-6 mr-2" src="/assets/images/fb.png" alt="Facebook logo" />
+              Sign Up with Facebook
+            </button>
+          </div>
+        </form>
+        <p className="text-center text-gray-600">
+          Already have an account? <a href="/login" className="text-blue-600 hover:underline">Log in</a>
+        </p>
       </div>
-      <ul className="flex justify-center mt-4">
-        <li className="mx-1 cursor-pointer">
-          <button
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-            className="text-blue-600"
-          >
-            Previous
-          </button>
-        </li>
-        {renderPageNumbers}
-        <li className="mx-1 cursor-pointer">
-          <button
-            onClick={goToNextPage}
-            disabled={currentPage === Math.ceil(products.length / itemsPerPage)}
-            className="text-blue-600"
-          >
-            Next
-          </button>
-        </li>
-      </ul>
     </div>
   );
 };
+
+export default Register;
