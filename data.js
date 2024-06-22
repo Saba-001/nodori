@@ -3,7 +3,7 @@ export const categories = ["chair", "table", "sofa", "shelf", "desk"];
 export const products = [
   {
     id: "1",
-    isVisible: false,
+    isVisible: true,
     iconNames: ["1"],
     name: "Syltherine Cafe Chair",
     miniDescription: "A stylish and comfortable chair for cafes.",

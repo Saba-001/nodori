@@ -18,7 +18,7 @@ export const DashboardLayout = () => {
   }, [selectedProducts]);
 
   return (
-    <div className="min-h-screen flex flex-col pt-20">
+    <div className="min-h-screen flex flex-col">
       <DashboardHeader
         selectedProducts={selectedProducts}
         setSelectedProducts={setSelectedProducts}

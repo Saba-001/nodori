@@ -40,7 +40,7 @@ export const Cart = ({ selectedProducts, setSelectedProducts }) => {
             {selectedProductKeys.length > 0 ? (
               <>
                 <div className="flex justify-between items-center mb-4">
-                  <h2 className="text-lg font-semibold">Cart:</h2>
+                  <h2 className="text-lg font-semibold">{t("common_cart")}</h2>
                   <button
                     className="text-sm text-gray-500 hover:text-red-500 focus:outline-none"
                     onClick={clearCart}

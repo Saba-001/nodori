@@ -46,7 +46,7 @@ export const DashboardFooter = () => {
           <p>{t("footer_support_desc")}</p>
         </div>
       </div>
-      <div className="flex justify-evenly py-20 text-sm">
+      <div className="flex justify-evenly pt-20 text-sm">
         <div>
           <p className="font-bold mb-2 text-xl text-black">
             {t("common_logo")}

@@ -4,7 +4,7 @@
   "common_min": "min:",
   "common_max": "max:",
   "common_sort_by": "Sort By",
-  "common_sold": "Sold",
+  "common_sold": "Out Of Stock",
   "common_in_stock": "In Stock",
   "common_remove": "remove",
   "common_remove_all": "remove all",
@@ -31,6 +31,7 @@
   "message_send": "Message Sent, be patient we will contact you soon",
   "message_not_send": "Try Again",
   "wrong_auth": "Incorrect Email/Password, try again",
+  "common_cart": "Cart:",
 
   "sort_price_asc": "Price: Low to High",
   "sort_price_desc": "Price: High to Low",
@@ -41,6 +42,13 @@
 
   "product_add_to_cart": "Add In Cart",
   "product_add_another_to_cart": "Add (Total:{{ amount }})",
+  "product_not_found": "Product not found",
+
+  "product_material": "Material",
+  "product_type": "Type",
+  "product_categories": "Categories",
+  "product_room": "Room",
+  "product_additional_information": "Additional Information",
 
   "footer_quality": "Highest Quality",
   "footer_quality_desc": "Made By best Material in Market",

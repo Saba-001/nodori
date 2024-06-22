@@ -3,9 +3,9 @@
   "common_contact_us": "დაგვიკავშირდით",
   "common_min": "მინ:",
   "common_max": "მაქს:",
-  "common_sort_by": "Sort By",
-  "common_sold": "გაყიდულია",
-  "common_in_stock": "In Stock",
+  "common_sort_by": "დაალაგე:",
+  "common_sold": "მარაგში არ არის",
+  "common_in_stock": "მარაგშია",
   "common_remove": "წაშალე",
   "common_remove_all": "წაშალე ყველა",
   "common_logo": "ჰოუმკრაფტი",
@@ -31,6 +31,7 @@
   "message_send": "შეტყობინება გაიგზავნა, ვეცდებით მალე დაგიკავშირდეთ მითითებულ საკონტაქტო ინფორმაციის საშუალებით",
   "message_not_send": "ცადეთ ხელახლა",
   "wrong_auth": "არასწროი მეილი/პაროლი, ცადეთ ხელახლა",
+  "common_cart": "კალათა:",
 
   "sort_price_asc": "ფასი: დაბალი-მაღალი",
   "sort_price_desc": "ფასი: მაღალი-დაბალი",
@@ -41,6 +42,13 @@
 
   "product_add_to_cart": "დაამატე კალათაში",
   "product_add_another_to_cart": "დაამატე ( სულ:{{ amount }} )",
+  "product_not_found": "პროდუქტი ვერ მოიძებნა",
+
+  "product_material": "მასალა",
+  "product_type": "ტიპი",
+  "product_categories": "კატეგორიები",
+  "product_room": "ოთახი",
+  "product_additional_information": "დამატებითი ინფორმაცია",
 
   "footer_quality": "უმაღლესი ხარისხი",
   "footer_quality_desc": "დამზადებული უმაღლესი ხარისხის მატერიისგან",

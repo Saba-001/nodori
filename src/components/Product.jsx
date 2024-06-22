@@ -2,6 +2,8 @@ import Slider from "react-slick";
 import { useTranslation } from "react-i18next";
 
 import { Img } from "./Img";
+import { useNavigate } from "react-router-dom";
+import { AddToCartButton } from "./AddToCartButton";
 
 export const Product = ({
   id,
@@ -16,6 +18,7 @@ export const Product = ({
   addToCart,
 }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const settings = {
     dots: true,
@@ -24,22 +27,16 @@ export const Product = ({
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  const handleAddition = () => {
-    addToCart(id, (amountInCart || 0) + 1);
-  };
 
-  const handleRemoval = () => {
-    addToCart(id, amountInCart - 1);
-  };
-
-  const handleClear = () => {
-    addToCart(id, 0);
+  const handleProductClick = () => {
+    navigate(`/product/${id}`);
   };
 
   return (
     <div
       key={id}
-      className="border p-4 rounded-lg shadow-lg flex flex-col bg-beige relative"
+      className="border p-4 rounded-lg shadow-lg flex flex-col bg-beige relative cursor-pointer hover:opacity-95"
+      onClick={handleProductClick}
     >
       {iconNames?.length > 1 ? (
         <Slider {...settings} className="mb-12">
@@ -82,32 +79,11 @@ export const Product = ({
       </div>
 
       {isOnSale && (
-        <div className="mt-4 flex space-x-2">
-          <button
-            onClick={handleAddition}
-            className="bg-brown text-white py-2 px-2 rounded-md hover:bg-nextPrevBg hover:text-nextPrevText flex-grow"
-          >
-            {amountInCart > 0
-              ? t("product_add_another_to_cart", { amount: amountInCart })
-              : t("product_add_to_cart")}
-          </button>
-          {amountInCart > 0 && (
-            <button
-              onClick={handleRemoval}
-              className="bg-red-500 text-white py-2 px-2 rounded-md hover:bg-red-600"
-            >
-              {t("common_remove")}
-            </button>
-          )}
-          {amountInCart > 1 && (
-            <button
-              onClick={handleClear}
-              className="bg-red-500 text-white py-2 px-2 rounded-md hover:bg-red-600"
-            >
-              {t("common_remove_all")}
-            </button>
-          )}
-        </div>
+        <AddToCartButton
+          amountInCart={amountInCart}
+          id={id}
+          addToCart={addToCart}
+        />
       )}
     </div>
   );
