@@ -15,6 +15,7 @@
   "common_clear": "Clear",
   "common_close": "Close",
   "common_empty_cart": "Your Cart Is Empty",
+  "common_cart": "Cart:",
 
   "sort_price_asc": "Price: Low to High",
   "sort_price_desc": "Price: High to Low",
