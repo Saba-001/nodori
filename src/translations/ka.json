@@ -39,5 +39,12 @@
 
   "search_placeholder": "მოძებნეთ სასურველი ავეჯი...",
   "home_our_products": "ჩვენი პროდუქტები",
-  "choose_filter": "აირჩიეთ ფილტრი"
+  "choose_filter": "აირჩიეთ ფილტრი",
+  "sign_up": "შექმნა",
+  "email":"მეილი",
+  "password":"პაროლი",
+  "Sign_fb":"ფეისბუქით შექმნა",
+  "Already_have_acc":"გაქვთ უკვე ექაუნთი?",
+  "login":"შესვლა"
 }
+

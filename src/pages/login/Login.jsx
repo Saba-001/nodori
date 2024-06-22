@@ -1,36 +1,31 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";  // Import useLocation and useNavigate
+import { useLocation, useNavigate } from "react-router-dom";  
+import { useTranslation } from "react-i18next";
 
-export const Login = ({ registeredUsers }) => {  // Pass registeredUsers as prop
+export const Login = ({ registeredUsers }) => {  
   const location = useLocation();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const { t } = useTranslation();
 
-  // Check if there's an error message from the previous attempt
   const errorMessage = location.state ? location.state.error : "";
 
-  // Handle email input change
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
-  // Handle password input change
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Find matching email and password in registeredUsers
     const user = registeredUsers.find(user => user.email === email && user.password === password);
     if (user) {
-      // Navigate to success page or dashboard
       navigate("/dashboard");
     } else {
-      // Set error message if login fails
       setError("Invalid email or password. Please try again.");
     }
   };
@@ -38,13 +33,13 @@ export const Login = ({ registeredUsers }) => {  // Pass registeredUsers as prop
   return (
     <div className="flex items-center justify-center min-h-screen bg-beige">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold mb-6 text-center text-brown">შესვლა</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center text-brown">{t("login")}</h1>
         {errorMessage && <p className="text-red-500 text-center mb-4">{errorMessage}</p>}
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="mb-6">
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-              მეილი:
+            {t("email")}:
             </label>
             <input
               type="email"
@@ -57,7 +52,7 @@ export const Login = ({ registeredUsers }) => {  // Pass registeredUsers as prop
           </div>
           <div className="mb-6">
             <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
-              პაროლი:
+            {t("password")}:
             </label>
             <input
               type="password"
@@ -69,12 +64,13 @@ export const Login = ({ registeredUsers }) => {  // Pass registeredUsers as prop
             />
           </div>
           <div className="flex items-center justify-between">
-            <button
-              type="submit"
+            <a
+              href="/"
               className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
             >
-              შესვლა
-            </button>
+              {t("login")}
+            </a>
+            
           </div>
         </form>
       </div>

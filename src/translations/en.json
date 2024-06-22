@@ -39,5 +39,11 @@
 
   "search_placeholder": "Search your desired product...",
   "home_our_products": "Your Products",
-  "choose_filter": "Choose Filter"
+  "choose_filter": "Choose Filter",
+  "sign_up": "Sign up",
+  "email":"email",
+  "password":"password",
+  "Sign_fb":"Sign in with Facebook",
+  "Already_have_acc":" Already have an account?",
+  "login":"Log In"
 }
