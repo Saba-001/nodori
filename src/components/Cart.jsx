@@ -72,6 +72,12 @@ export const Cart = ({ selectedProducts, setSelectedProducts }) => {
                   <p className="text-lg font-semibold">
                     ჯამური თანხა: ${totalPrice.toFixed(2)}{" "}
                   </p>
+                  <button
+                    className="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none"
+                    onClick={toggleCartDetails}
+                  >
+                    დახურვა
+                  </button>
                 </div>
               </>
             ) : (
