@@ -24,7 +24,7 @@ export const Login = () => {
     if (email === state.email && password === state.password) {
       navigate("/");
     } else {
-      setError("არასწორი მეილი/პაროლი");
+      setError(t("wrong_auth"));
     }
   };
 

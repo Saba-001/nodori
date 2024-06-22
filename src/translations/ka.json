@@ -15,6 +15,22 @@
   "common_clear": "გაასუფთავეთ",
   "common_close": "დახურვა",
   "common_empty_cart": " თქვენი კალათა ცარიელია",
+  "common_name": "სახელი",
+  "common_email": "ელფოსტა",
+  "common_phone": "ტელეფონის ნომერი",
+  "common_subject": "სათაური",
+  "common_message": "მესიჯი",
+  "common_send_message": "გაგზავნეთ შეტყობინება",
+
+  "common_name_placeholder": "შენი სახელი",
+  "common_email_placeholder": "შენი ელფოსტა",
+  "common_phone_placeholder": "შენი ტელეფონის ნომერი",
+  "common_subject_placeholder": "შეტყობინების სათაური",
+  "common_message_placeholder": "დეტალები",
+
+  "message_send": "შეტყობინება გაიგზავნა, ვეცდებით მალე დაგიკავშირდეთ მითითებულ საკონტაქტო ინფორმაციის საშუალებით",
+  "message_not_send": "ცადეთ ხელახლა",
+  "wrong_auth": "არასწროი მეილი/პაროლი, ცადეთ ხელახლა",
 
   "sort_price_asc": "ფასი: დაბალი-მაღალი",
   "sort_price_desc": "ფასი: მაღალი-დაბალი",
@@ -41,10 +57,9 @@
   "home_our_products": "ჩვენი პროდუქტები",
   "choose_filter": "აირჩიეთ ფილტრი",
   "sign_up": "შექმნა",
-  "email":"მეილი",
-  "password":"პაროლი",
-  "Sign_fb":"ფეისბუქით შექმნა",
-  "Already_have_acc":"გაქვთ უკვე ექაუნთი?",
-  "login":"შესვლა"
+  "email": "მეილი",
+  "password": "პაროლი",
+  "Sign_fb": "ფეისბუქით შექმნა",
+  "Already_have_acc": "გაქვთ უკვე ექაუნთი?",
+  "login": "შესვლა"
 }
-
