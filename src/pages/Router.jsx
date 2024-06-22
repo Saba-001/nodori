@@ -1,4 +1,3 @@
-// router.js
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { DashboardLayout } from "./dashboard-layout/DashboardLayout.jsx";
 import { Register } from "./register/Register.jsx";

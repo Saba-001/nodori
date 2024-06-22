@@ -1,8 +1,9 @@
 import { useNavigate, Link } from "react-router-dom";
 
 import { Img } from "./Img";
+import { Cart } from "./Cart";
 
-export const DashboardHeader = () => {
+export const DashboardHeader = ({ selectedProducts, setSelectedProducts }) => {
   const navigate = useNavigate();
 
   const handleRegister = () => {
@@ -10,7 +11,7 @@ export const DashboardHeader = () => {
   };
 
   return (
-    <header className="bg-beige text-brown flex items-center justify-between p-4 h-20 fixed w-full top-0 left-0  z-10">
+    <header className="bg-beige text-brown flex items-center justify-between p-4 h-20 fixed w-full top-0 left-0 z-50">
       <div className="flex items-center space-x-4">
         <Img name="Logo" alt="Logo" className="h-10 w-10" />
         <span className="text-lg font-bold">HOMECRAFT.</span>
@@ -29,15 +30,13 @@ export const DashboardHeader = () => {
           დაგვიკავშირდით
         </Link>
       </div>
-      <div className="flex items-center space-x-4">
-        <button className="focus:outline-none">
-          <Img name="Favorites" alt="Favorites" className="h-6 w-6" />
-        </button>
-        <button className="focus:outline-none">
-          <Img name="Cart" alt="Cart" className="h-6 w-6" />
-        </button>
+      <div className="flex items-center mr-8 gap-8">
+        <Cart
+          selectedProducts={selectedProducts}
+          setSelectedProducts={setSelectedProducts}
+        />
         <button className="focus:outline-none" onClick={handleRegister}>
-          <Img name="Register" alt="Account" className="h-6 w-6" />
+          <Img name="Register" alt="Account" className="h-8 w-8" />
         </button>
       </div>
     </header>

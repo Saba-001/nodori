@@ -11,8 +11,10 @@ import {
   PriceFilter,
 } from "/src/components";
 import { products } from "/data";
+import { useOutletContext } from "react-router-dom";
 
 export const Home = () => {
+  const { selectedProducts, setSelectedProducts } = useOutletContext();
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedSort, setSelectedSort] = useState("default");
   const [selectedCategory, setSelectedCategory] = useState("default");
@@ -37,6 +39,8 @@ export const Home = () => {
   });
 
   const filteredProducts = sortedProducts.filter((product) => {
+    if (!product.isVisible) return false;
+
     const matchesCategory =
       selectedCategory === "default" ||
       product.categories.includes(selectedCategory);
@@ -78,10 +82,25 @@ export const Home = () => {
     setPriceRange(range);
   };
 
+  const handleAddToCart = (id, amount) => {
+    const data = {
+      ...selectedProducts,
+      [id]: amount ? { id, amount } : undefined,
+    };
+
+    if (amount) {
+      data[id] = { id, amount };
+    } else {
+      delete data[id];
+    }
+
+    setSelectedProducts(data);
+  };
+
   return (
     <>
       <Navigation />
-      <div className="flex-grow pt-20 pb-16">
+      <div className="flex-grow pt-14 pb-16">
         <div className="relative mb-16">
           <Img
             name="products"
@@ -121,13 +140,16 @@ export const Home = () => {
             {currentProducts.map((item) => (
               <Product
                 id={item.id}
-                iconName={item.iconNames[0]}
+                iconNames={item.iconNames}
                 name={item.name}
                 miniDescription={item.miniDescription}
                 currentPrice={item.currentPrice}
                 oldPrice={item.oldPrice}
                 description={item.description}
                 key={item.id}
+                isOnSale={item.isOnSale}
+                amountInCart={selectedProducts?.[item.id]?.amount}
+                addToCart={handleAddToCart}
               />
             ))}
           </div>

@@ -34,7 +34,7 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="bg-beige text-brown p-4 shadow-md fixed w-full z-10 h-20">
+    <nav className="bg-beige text-brown shadow-md fixed w-full z-10 h-14">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-4"></div>
         <div className="relative w-full max-w-lg">

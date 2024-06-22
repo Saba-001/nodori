@@ -21,7 +21,6 @@ export const ContactUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Configure emailjs with your user ID and email template ID
     emailjs
       .send("gmail", "template_4y6dglk", formData, "user_youruserid")
       .then(() => {
