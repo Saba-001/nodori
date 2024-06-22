@@ -5,6 +5,7 @@ import { DashboardHeader } from "/src/components";
 import { products } from "/data";
 
 export const DashboardLayout = () => {
+  console.log("some");
   return (
     <div className="min-h-screen flex flex-col pt-20">
       <DashboardHeader products={products} />
