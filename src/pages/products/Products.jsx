@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { products } from "/data";
 import { Img } from "/src/components";
+import { Navigation } from "./components/Navigation";
+
+import { DashboardFooter } from "./components/DashboardFooter";
 
 export const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -67,34 +70,51 @@ export const Products = () => {
       <p className="mt-2">{item.description}</p>
     </div>
   ));
-
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Products</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {renderItems}
+    <>
+      <Navigation />
+      <div className="flex-grow pt-20">
+        {/* Big image and "Products" text */}
+        <div className="relative mb-20">
+          <Img
+            name="products"
+            alt="Products"
+            className="w-full h-80 object-cover"
+          />
+          <h1 className="absolute inset-0 flex items-center justify-center text-5xl font-bold">
+            Products
+          </h1>
+        </div>
+        <div className="p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {renderItems}
+          </div>
+          <ul className="flex justify-center mt-4">
+            <li className="mx-1">
+              <button
+                onClick={goToPreviousPage}
+                disabled={currentPage === 1}
+                className="px-3 py-1 bg-blue-600 text-white rounded-full disabled:bg-gray-300"
+              >
+                Previous
+              </button>
+            </li>
+            {renderPageNumbers}
+            <li className="mx-1">
+              <button
+                onClick={goToNextPage}
+                disabled={
+                  currentPage === Math.ceil(products.length / itemsPerPage)
+                }
+                className="px-3 py-1 bg-blue-600 text-white rounded-full disabled:bg-gray-300"
+              >
+                Next
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
-      <ul className="flex justify-center mt-4">
-        <li className="mx-1 cursor-pointer">
-          <button
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-            className="text-blue-600"
-          >
-            Previous
-          </button>
-        </li>
-        {renderPageNumbers}
-        <li className="mx-1 cursor-pointer">
-          <button
-            onClick={goToNextPage}
-            disabled={currentPage === Math.ceil(products.length / itemsPerPage)}
-            className="text-blue-600"
-          >
-            Next
-          </button>
-        </li>
-      </ul>
-    </div>
+      <DashboardFooter />
+    </>
   );
 };
