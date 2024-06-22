@@ -1,0 +1,43 @@
+{
+  "common_main": "Home",
+  "common_contact_us": "Contact Us",
+  "common_min": "min:",
+  "common_max": "max:",
+  "common_sort_by": "Sort By",
+  "common_sold": "Sold",
+  "common_in_stock": "In Stock",
+  "common_remove": "remove",
+  "common_remove_all": "remove all",
+  "common_logo": "HomeCraft",
+  "common_address_1": "nutsubidze street 95",
+  "common_address_2": "Tbilisi 0186",
+  "common_links": "Links",
+  "common_clear": "Clear",
+  "common_close": "Close",
+  "common_empty_cart": "Your Cart Is Empty",
+
+  "sort_price_asc": "Price: Low to High",
+  "sort_price_desc": "Price: High to Low",
+  "sort_name_asc": "Name: A to Z",
+  "sort_name_desc": "Name: Z to A",
+  "sort_discount_asc": "Discount: Low to High",
+  "sort_discount_desc": "Discount: High to Low",
+
+  "product_add_to_cart": "Add In Cart",
+  "product_add_another_to_cart": "Add Another ( Total:{{ amount }} )",
+
+  "footer_quality": "Highest Quality",
+  "footer_quality_desc": "Made By best Material in Market",
+  "footer_waranty": "Warranty",
+  "footer_waranty_desc": "2 Year and above",
+  "footer_delivery": "Free Delivery",
+  "footer_delivery_desc": "Orders Over 200$",
+  "footer_support": "8 / 5 contact",
+  "footer_support_desc": "using our contact us form",
+
+  "cart_total": "Total Price: {{amount}}$",
+
+  "search_placeholder": "Search your desired product...",
+  "home_our_products": "Your Products",
+  "choose_filter": "Choose Filter"
+}

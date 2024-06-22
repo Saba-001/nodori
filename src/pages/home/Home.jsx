@@ -12,6 +12,7 @@ import {
 } from "/src/components";
 import { products } from "/data";
 import { useOutletContext } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Home = () => {
   const { selectedProducts, setSelectedProducts } = useOutletContext();
@@ -19,6 +20,7 @@ export const Home = () => {
   const [selectedSort, setSelectedSort] = useState("default");
   const [selectedCategory, setSelectedCategory] = useState("default");
   const [priceRange, setPriceRange] = useState([undefined, undefined]);
+  const { t } = useTranslation();
 
   const sortedProducts = products.sort((a, b) => {
     if (selectedSort === "priceAsc") {
@@ -108,7 +110,7 @@ export const Home = () => {
             className="w-full h-80 object-cover"
           />
           <h1 className="absolute inset-0 flex items-center justify-center text-5xl font-bold">
-            ჩვენი პროდუქტები
+            {t("home_our_products")}
           </h1>
         </div>
         <div className="px-28">

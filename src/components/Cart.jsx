@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import { Img } from "./Img";
 import { products } from "/data";
 
 export const Cart = ({ selectedProducts, setSelectedProducts }) => {
+  const { t } = useTranslation();
+
   const [showCartDetails, setShowCartDetails] = useState(false);
 
   const selectedProductKeys = Object.keys(selectedProducts || {});
@@ -41,7 +45,7 @@ export const Cart = ({ selectedProducts, setSelectedProducts }) => {
                     className="text-sm text-gray-500 hover:text-red-500 focus:outline-none"
                     onClick={clearCart}
                   >
-                    გაასუფთავეთ
+                    {t("common_clear")}
                   </button>
                 </div>
                 <div className="overflow-y-auto max-h-72">
@@ -70,26 +74,26 @@ export const Cart = ({ selectedProducts, setSelectedProducts }) => {
                 </div>
                 <div className="mt-4 border-t pt-4">
                   <p className="text-lg font-semibold">
-                    ჯამური თანხა: ${totalPrice.toFixed(2)}{" "}
+                    {t("cart_total", { amount: totalPrice.toFixed(2) })}
                   </p>
                   <button
                     className="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none"
                     onClick={toggleCartDetails}
                   >
-                    დახურვა
+                    {t("common_close")}
                   </button>
                 </div>
               </>
             ) : (
               <div className="text-center">
                 <p className="text-lg font-semibold mb-4">
-                  თქვენი კალათა ცარიელია
+                  {t("common_empty_cart")}
                 </p>
                 <button
                   className="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none"
                   onClick={toggleCartDetails}
                 >
-                  დახურვა
+                  {t("common_close")}
                 </button>
               </div>
             )}
