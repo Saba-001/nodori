@@ -1,24 +1,24 @@
 import { Arrow } from "/src/Icons";
 import { products } from "/data";
 
-export const itemsPerPage = 8;
+export const itemsPerPage = 9;
 const totalPages = Math.ceil(products.length / itemsPerPage);
 
-export const Pagination = ({ currentPage, setCurrentPage }) => {
+export const Pagination = ({ currentPage, onChange }) => {
   const oldPage = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+      onChange(currentPage - 1);
     }
   };
 
   const newPage = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
+      onChange(currentPage + 1);
     }
   };
 
   const handleClick = (e) => {
-    setCurrentPage(Number(e.target.id));
+    onChange(Number(e.target.id));
   };
 
   return (

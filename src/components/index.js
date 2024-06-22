@@ -4,3 +4,4 @@ export { Navigation } from "./Navigation.jsx";
 export { Pagination, itemsPerPage } from "./Pagination.jsx";
 export { Product } from "./Product.jsx";
 export { DashboardHeader } from "./DashboardHeader.jsx";
+export { Sort } from "./Sort.jsx";
