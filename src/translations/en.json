@@ -15,6 +15,22 @@
   "common_clear": "Clear",
   "common_close": "Close",
   "common_empty_cart": "Your Cart Is Empty",
+  "common_name": "Name",
+  "common_email": "E-Mail",
+  "common_phone": "Phone Number",
+  "common_subject": "Subject",
+  "common_message": "Message",
+  "common_send_message": "Send Message",
+
+  "common_name_placeholder": "your name",
+  "common_email_placeholder": "your email",
+  "common_phone_placeholder": "your phone",
+  "common_subject_placeholder": "point of message",
+  "common_message_placeholder": "details",
+
+  "message_send": "Message Sent, be patient we will contact you soon",
+  "message_not_send": "Try Again",
+  "wrong_auth": "Incorrect Email/Password, try again",
   "common_cart": "Cart:",
 
   "sort_price_asc": "Price: Low to High",
@@ -47,5 +63,11 @@
 
   "search_placeholder": "Search your desired product...",
   "home_our_products": "Your Products",
-  "choose_filter": "Choose Filter"
+  "choose_filter": "Choose Filter",
+  "sign_up": "Sign up",
+  "email": "email",
+  "password": "password",
+  "Sign_fb": "Sign in with Facebook",
+  "Already_have_acc": " Already have an account?",
+  "login": "Log In"
 }

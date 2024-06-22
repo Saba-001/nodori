@@ -1,99 +1,87 @@
 import { useState } from "react";
-import { products } from "/data"; // Adjust the import path as per your actual data location
+import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Login = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { t } = useTranslation();
+  const { state } = useLocation();
+  const [error, setError] = useState("");
 
-  // Calculate current items based on currentPage
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
-
-  // Handler for pagination click
-  const handleClick = (number) => {
-    setCurrentPage(number);
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
-  // Previous page handler
-  const goToPreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (email === state.email && password === state.password) {
+      navigate("/");
+    } else {
+      setError(t("wrong_auth"));
     }
   };
-
-  // Next page handler
-  const goToNextPage = () => {
-    if (currentPage < Math.ceil(products.length / itemsPerPage)) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  // Generate page numbers for pagination
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(products.length / itemsPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  // Render pagination buttons
-  const renderPageNumbers = pageNumbers.map((number) => (
-    <li
-      key={number}
-      className={`mx-1 cursor-pointer ${
-        currentPage === number ? "text-blue-600 font-bold" : "text-gray-500"
-      }`}
-    >
-      <button onClick={() => handleClick(number)}>{number}</button>
-    </li>
-  ));
-
-  // Render individual product items
-  const renderItems = currentItems.map((item) => (
-    <div key={item.id} className="border p-4 rounded-lg shadow-lg">
-      <img
-        src={item.iconUrl[0]}
-        alt={item.name}
-        className="w-full h-48 object-cover mb-4"
-      />
-      <h2 className="text-xl font-bold">{item.name}</h2>
-      <p className="text-gray-600">{item.miniDescription}</p>
-      <p className="mt-2 text-gray-800">
-        ${item.currentPrice}{" "}
-        {item.oldPrice && (
-          <span className="line-through text-gray-500">${item.oldPrice}</span>
-        )}
-      </p>
-      <p className="mt-2">{item.description}</p>
-    </div>
-  ));
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Products</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {renderItems}
+    <div className="flex items-center justify-center min-h-screen bg-beige">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-3xl font-bold mb-6 text-center text-brown">
+          {t("login")}
+        </h1>
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+        <form onSubmit={handleSubmit} className="mb-6">
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-gray-700 font-semibold mb-2"
+            >
+              {t("email")}:
+            </label>
+            <input
+              type="email"
+              id="email"
+              autoComplete="email"
+              value={email}
+              onChange={handleEmailChange}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="password"
+              className="block text-gray-700 font-semibold mb-2"
+            >
+              {t("password")}:
+            </label>
+            <input
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={handlePasswordChange}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
+            >
+              {t("login")}
+            </button>
+          </div>
+        </form>
       </div>
-      <ul className="flex justify-center mt-4">
-        <li className="mx-1 cursor-pointer">
-          <button
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-            className="text-blue-600"
-          >
-            Previous
-          </button>
-        </li>
-        {renderPageNumbers}
-        <li className="mx-1 cursor-pointer">
-          <button
-            onClick={goToNextPage}
-            disabled={currentPage === Math.ceil(products.length / itemsPerPage)}
-            className="text-blue-600"
-          >
-            Next
-          </button>
-        </li>
-      </ul>
     </div>
   );
 };
+
+export default Login;
