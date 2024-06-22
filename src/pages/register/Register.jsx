@@ -85,7 +85,7 @@ export const Register = () => {
           </div>
         </form>
         <p className="text-center text-gray-600">
-          {t("Already_have_acc")} <a href="/login" className="text-blue-600 hover:underline">შესვლა</a>
+          {t("Already_have_acc")} <a href="/login" className="text-blue-600 hover:underline">{t("login")}</a>
         </p>
       </div>
     </div>

@@ -24,7 +24,7 @@ export const Login = ({ registeredUsers }) => {
     e.preventDefault();
     const user = registeredUsers.find(user => user.email === email && user.password === password);
     if (user) {
-      navigate("/dashboard");
+      navigate("/");
     } else {
       setError("Invalid email or password. Please try again.");
     }
