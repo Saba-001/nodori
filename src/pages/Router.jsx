@@ -5,6 +5,7 @@ import { Login } from "./login/Login.jsx";
 
 import { Home } from "../pages/home/Home.jsx";
 import { ContactUs } from "./contact-us/ContactUs.jsx";
+import { ProductDetail } from "./product-details/ProductDetails.jsx";
 
 const router = createBrowserRouter(
   [
@@ -19,6 +20,10 @@ const router = createBrowserRouter(
         {
           path: "/contact-us",
           element: <ContactUs />,
+        },
+        {
+          path: "/product/:id",
+          element: <ProductDetail />,
         },
       ],
     },

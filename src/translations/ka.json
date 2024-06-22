@@ -4,7 +4,7 @@
   "common_min": "მინ:",
   "common_max": "მაქს:",
   "common_sort_by": "დაალაგე:",
-  "common_sold": "გაყიდულია",
+  "common_sold": "მარაგში არ არის",
   "common_in_stock": "მარაგშია",
   "common_remove": "წაშალე",
   "common_remove_all": "წაშალე ყველა",
@@ -26,6 +26,12 @@
 
   "product_add_to_cart": "დაამატე კალათაში",
   "product_add_another_to_cart": "დაამატე ( სულ:{{ amount }} )",
+
+  "product_material": "მასალა",
+  "product_type": "ტიპი",
+  "product_categories": "კატეგორიები",
+  "product_room": "ოთახი",
+  "product_additional_information": "დამატებითი ინფორმაცია",
 
   "footer_quality": "უმაღლესი ხარისხი",
   "footer_quality_desc": "დამზადებული უმაღლესი ხარისხის მატერიისგან",

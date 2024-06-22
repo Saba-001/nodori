@@ -13,13 +13,20 @@ export const DashboardHeader = ({ selectedProducts, setSelectedProducts }) => {
     navigate("/register");
   };
 
+  const handleMain = () => {
+    navigate("/");
+  };
+
   const changeLanguage = () => {
     i18n.changeLanguage(i18n.language === "en" ? "ka" : "en");
   };
 
   return (
     <header className="bg-beige text-brown flex items-center justify-between p-4 h-20 fixed w-full top-0 left-0 z-50">
-      <div className="flex items-center space-x-4">
+      <div
+        className="flex items-center space-x-4 cursor-pointer"
+        onClick={handleMain}
+      >
         <Img name="Logo" alt="Logo" className="h-10 w-10" />
         <span className="text-lg font-bold">HOMECRAFT.</span>
       </div>

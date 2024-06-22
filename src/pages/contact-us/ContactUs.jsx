@@ -42,7 +42,7 @@ export const ContactUs = () => {
 
   return (
     <div className="flex-grow">
-      <div className="flex items-center justify-center min-h-screen bg-beige p-8">
+      <div className="flex items-center justify-center min-h-screen bg-beige">
         <div className="w-full max-w-lg bg-white shadow-lg rounded-lg p-6 -mt-14">
           <h1 className="text-4xl font-bold text-brown mb-6 text-center">
             დაგვიკავშირდით
