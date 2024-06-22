@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Img } from "/src/components";
 import { useNavigate } from "react-router-dom";
+
 import { products } from "/data";
+
+import { Img } from "./Img";
 
 export const Navigation = () => {
   const [searchTerm, setSearchTerm] = useState("");

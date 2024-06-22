@@ -1,7 +1,7 @@
-// layout/DashboardLayout.jsx
-import { DashboardHeader } from "./components/DashboardHeader";
-
 import { Outlet } from "react-router-dom";
+
+import { DashboardHeader } from "/src/components";
+
 import { products } from "/data";
 
 export const DashboardLayout = () => {

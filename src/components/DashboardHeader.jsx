@@ -1,5 +1,6 @@
 import { useNavigate, Link } from "react-router-dom";
-import { Img } from "/src/components";
+
+import { Img } from "./Img";
 
 export const DashboardHeader = () => {
   const navigate = useNavigate();

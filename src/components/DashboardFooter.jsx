@@ -1,5 +1,6 @@
-import { Img } from "/src/components";
 import { Link } from "react-router-dom";
+
+import { Img } from "./Img";
 
 export const DashboardFooter = () => {
   return (
