@@ -22,10 +22,9 @@ export const Login = () => {
     e.preventDefault();
 
     if (email === state.email && password === state.password) {
-      console.log(email, state.email, password, state.password);
       navigate("/");
     } else {
-      setError("Invalid email or password. Please try again.");
+      setError("არასწორი მეილი/პაროლი");
     }
   };
 
@@ -50,7 +49,7 @@ export const Login = () => {
               autoComplete="email"
               value={email}
               onChange={handleEmailChange}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded-md px-4 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -67,7 +66,7 @@ export const Login = () => {
               autoComplete="current-password"
               value={password}
               onChange={handlePasswordChange}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded-md px-4 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
