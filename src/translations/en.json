@@ -24,7 +24,7 @@
   "sort_discount_desc": "Discount: High to Low",
 
   "product_add_to_cart": "Add In Cart",
-  "product_add_another_to_cart": "Add Another ( Total:{{ amount }} )",
+  "product_add_another_to_cart": "Add (Total:{{ amount }})",
 
   "footer_quality": "Highest Quality",
   "footer_quality_desc": "Made By best Material in Market",
