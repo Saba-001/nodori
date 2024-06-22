@@ -1,10 +1,8 @@
 import { Arrow } from "/src/Icons";
-import { products } from "/data";
 
 export const itemsPerPage = 9;
-const totalPages = Math.ceil(products.length / itemsPerPage);
 
-export const Pagination = ({ currentPage, onChange }) => {
+export const Pagination = ({ currentPage, onChange, totalPages }) => {
   const oldPage = () => {
     if (currentPage > 1) {
       onChange(currentPage - 1);
@@ -22,7 +20,7 @@ export const Pagination = ({ currentPage, onChange }) => {
   };
 
   return (
-    <ul className="flex justify-center my-16 items-center">
+    <ul className="flex justify-center items-center">
       <li className="mr-4 list-none">
         <button
           onClick={oldPage}
@@ -42,7 +40,7 @@ export const Pagination = ({ currentPage, onChange }) => {
           <button
             onClick={handleClick}
             id={i + 1}
-            className={`px-3 py-1 min-w-12 h-12 flex items-center justify-center ${
+            className={`px-3 py-1 min-w-10 min-h-10 flex items-center justify-center ${
               i + 1 === currentPage
                 ? "bg-brown text-white rounded-full"
                 : "text-inactiveGray"

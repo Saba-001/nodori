@@ -1,3 +1,5 @@
+export const categories = ["chair", "table", "sofa", "shelf", "desk"];
+
 export const products = [
   {
     id: 1,
