@@ -1,7 +1,9 @@
 export const Img = ({ className, name, src, ...restProps }) => {
+  const base = import.meta.env.VITE_BASE_URL || "";
+
   return (
     <img
-      src={src || "src/images/" + name + ".png"}
+      src={src || base + "src/images/" + name + ".png"}
       className={className}
       {...restProps}
     />
