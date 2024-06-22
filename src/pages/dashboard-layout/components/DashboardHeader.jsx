@@ -19,13 +19,13 @@ export const DashboardHeader = () => {
           to="/"
           className="hover:underline active:underline font-[Satoshi-medium]"
         >
-          Home
+          მთავარი
         </Link>
         <Link
           to="/contact-us"
           className="hover:underline font-[Satoshi-medium]"
         >
-          Contact Us
+          დაგვიკავშირდით
         </Link>
       </div>
       <div className="flex items-center space-x-4">

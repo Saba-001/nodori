@@ -74,7 +74,6 @@ export const Products = () => {
     <>
       <Navigation />
       <div className="flex-grow pt-20">
-        {/* Big image and "Products" text */}
         <div className="relative mb-20">
           <Img
             name="products"
@@ -82,7 +81,7 @@ export const Products = () => {
             className="w-full h-80 object-cover"
           />
           <h1 className="absolute inset-0 flex items-center justify-center text-5xl font-bold">
-            Products
+            ჩვენი პროდუქტები
           </h1>
         </div>
         <div className="p-4">
