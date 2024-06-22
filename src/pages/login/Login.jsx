@@ -38,13 +38,13 @@ export const Login = ({ registeredUsers }) => {  // Pass registeredUsers as prop
   return (
     <div className="flex items-center justify-center min-h-screen bg-beige">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold mb-6 text-center text-brown">Log In</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center text-brown">შესვლა</h1>
         {errorMessage && <p className="text-red-500 text-center mb-4">{errorMessage}</p>}
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="mb-6">
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-              Email:
+              მეილი:
             </label>
             <input
               type="email"
@@ -57,7 +57,7 @@ export const Login = ({ registeredUsers }) => {  // Pass registeredUsers as prop
           </div>
           <div className="mb-6">
             <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
-              Password:
+              პაროლი:
             </label>
             <input
               type="password"
@@ -73,7 +73,7 @@ export const Login = ({ registeredUsers }) => {  // Pass registeredUsers as prop
               type="submit"
               className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
             >
-              Log In
+              შესვლა
             </button>
           </div>
         </form>

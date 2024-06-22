@@ -40,11 +40,11 @@ export const Register = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-beige ">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold mb-6 text-center text-brown">Sign Up</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center text-brown">შექმნა</h1>
         <form onSubmit={handleSubmit} className="mb-6">
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-              Email:
+              მეილი:
             </label>
             <input
               type="email"
@@ -57,7 +57,7 @@ export const Register = () => {
           </div>
           <div className="mb-6">
             <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
-              Password:
+              პაროლი:
             </label>
             <input
               type="password"
@@ -73,7 +73,7 @@ export const Register = () => {
               type="submit"
               className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
             >
-              Sign Up
+              შექმნა
             </button>
             <button
               type="button"
@@ -81,12 +81,12 @@ export const Register = () => {
               className="bg-blue-700 text-white px-4 py-2 rounded-md flex items-center hover:bg-blue-800 transition duration-300"
             >
               <img className="w-6 h-6 mr-2" src="/assets/images/fb.png" alt="Facebook logo" />
-              Sign Up with Facebook
+              ფეისბუქით შექმნა
             </button>
           </div>
         </form>
         <p className="text-center text-gray-600">
-          Already have an account? <a href="/login" className="text-blue-600 hover:underline">Log in</a>
+          გაქვს უკვე ექაუნთი? <a href="/login" className="text-blue-600 hover:underline">შესვლა</a>
         </p>
       </div>
     </div>
