@@ -1,17 +1,15 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Img } from "/src/components";
+import { useNavigate } from "react-router-dom";
+
 import { products } from "/data";
 
-export const DashboardHeader = () => {
-  const navigate = useNavigate();
+import { Img } from "./Img";
+
+export const Navigation = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
-
-  const handleRegister = () => {
-    navigate("/register");
-  };
+  const navigate = useNavigate();
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
@@ -36,16 +34,13 @@ export const DashboardHeader = () => {
   };
 
   return (
-    <header className="bg-beige text-brown flex items-center justify-between p-4 shadow-md h-28">
-      <div className="flex items-center space-x-4">
-        <Img name="Logo" alt="Logo" className="h-10 w-10" />
-        <span className="text-lg font-bold">HOMECRAFT.</span>
-      </div>
-      <div className="flex-grow flex justify-center px-4 relative">
+    <nav className="bg-beige text-brown shadow-md fixed w-full z-10 h-14">
+      <div className="container mx-auto flex items-center justify-between">
+        <div className="flex items-center space-x-4"></div>
         <div className="relative w-full max-w-lg">
           <input
             type="text"
-            placeholder="Search"
+            placeholder="მოძებნეთ სასურველი ავეჯი..."
             className="px-4 py-2 w-full bg-white text-gray-700 rounded-full focus:outline-none"
             value={searchTerm}
             onChange={handleSearchChange}
@@ -114,18 +109,8 @@ export const DashboardHeader = () => {
             </ul>
           )}
         </div>
+        <div className="flex items-center space-x-4"></div>
       </div>
-      <div className="flex items-center space-x-4">
-        <button className="focus:outline-none">
-          <Img name="Favorites" alt="Favorites" className="h-6 w-6" />
-        </button>
-        <button className="focus:outline-none">
-          <Img name="Cart" alt="Cart" className="h-6 w-6" />
-        </button>
-        <button className="focus:outline-none" onClick={handleRegister}>
-          <Img name="Register" alt="Account" className="h-6 w-6" />
-        </button>
-      </div>
-    </header>
+    </nav>
   );
 };

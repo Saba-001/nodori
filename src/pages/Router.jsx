@@ -1,10 +1,10 @@
-// router.js
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { DashboardLayout } from "./dashboard-layout/DashboardLayout.jsx";
 import { Register } from "./register/Register.jsx";
 import { Login } from "./login/Login.jsx";
 
-import { Products } from "../pages/products/Products.jsx";
+import { Home } from "../pages/home/Home.jsx";
+import { ContactUs } from "./contact-us/ContactUs.jsx";
 
 const router = createBrowserRouter(
   [
@@ -14,7 +14,11 @@ const router = createBrowserRouter(
       children: [
         {
           path: "/",
-          element: <Products />,
+          element: <Home />,
+        },
+        {
+          path: "/contact-us",
+          element: <ContactUs />,
         },
       ],
     },

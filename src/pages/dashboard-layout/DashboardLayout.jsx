@@ -1,19 +1,33 @@
-// layout/DashboardLayout.jsx
-import { Navigation } from "./components/Navigation";
-import { DashboardHeader } from "./components/DashboardHeader";
-import { DashboardFooter } from "./components/DashboardFooter";
 import { Outlet } from "react-router-dom";
-import { products } from "/data";
+import { useEffect, useState } from "react";
+
+import { DashboardHeader } from "/src/components";
+
+const account = JSON.parse(localStorage.getItem("account"));
+const allProducts = JSON.parse(localStorage.getItem("products"));
 
 export const DashboardLayout = () => {
+  const [selectedProducts, setSelectedProducts] = useState(
+    allProducts?.[account.id]
+  );
+
+  useEffect(() => {
+    localStorage.setItem(
+      "products",
+      JSON.stringify({
+        ...allProducts,
+        [account.id]: selectedProducts,
+      })
+    );
+  }, [selectedProducts]);
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <DashboardHeader products={products} />
-      <Navigation />
-      <div className="flex-grow">
-        <Outlet />
-      </div>
-      <DashboardFooter />
+    <div className="min-h-screen flex flex-col pt-20">
+      <DashboardHeader
+        selectedProducts={selectedProducts}
+        setSelectedProducts={setSelectedProducts}
+      />
+      <Outlet context={{ selectedProducts, setSelectedProducts }} />
     </div>
   );
 };
