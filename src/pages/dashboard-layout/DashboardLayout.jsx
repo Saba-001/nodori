@@ -3,20 +3,16 @@ import { useEffect, useState } from "react";
 
 import { DashboardHeader } from "/src/components";
 
-const account = JSON.parse(localStorage.getItem("account"));
 const allProducts = JSON.parse(localStorage.getItem("products"));
 
 export const DashboardLayout = () => {
-  const [selectedProducts, setSelectedProducts] = useState(
-    allProducts?.[account.id]
-  );
+  const [selectedProducts, setSelectedProducts] = useState(allProducts);
 
   useEffect(() => {
     localStorage.setItem(
       "products",
       JSON.stringify({
-        ...allProducts,
-        [account.id]: selectedProducts,
+        ...selectedProducts,
       })
     );
   }, [selectedProducts]);

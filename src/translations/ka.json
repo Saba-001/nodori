@@ -1,0 +1,43 @@
+{
+  "common_main": "მთავარი",
+  "common_contact_us": "დაგვიკავშირდით",
+  "common_min": "მინ:",
+  "common_max": "მაქს:",
+  "common_sort_by": "Sort By",
+  "common_sold": "გაყიდულია",
+  "common_in_stock": "In Stock",
+  "common_remove": "წაშალე",
+  "common_remove_all": "წაშალე ყველა",
+  "common_logo": "ჰოუმკრაფტი",
+  "common_address_1": "ნუცუბიძის ქუჩა 95",
+  "common_address_2": "თბილისი 0186",
+  "common_links": "ლინკები",
+  "common_clear": "გაასუფთავეთ",
+  "common_close": "დახურვა",
+  "common_empty_cart": " თქვენი კალათა ცარიელია",
+
+  "sort_price_asc": "ფასი: დაბალი-მაღალი",
+  "sort_price_desc": "ფასი: მაღალი-დაბალი",
+  "sort_name_asc": "სახელი: ა-დან ზ-მდე",
+  "sort_name_desc": "სახელი: ზ-დან ა-მდე",
+  "sort_discount_asc": "ფასდაკლება: დაბალი-მაღალი",
+  "sort_discount_desc": "ფასდაკლება: მაღალი-დაბალი",
+
+  "product_add_to_cart": "დაამატე კალათაში",
+  "product_add_another_to_cart": "დაამატე ( სულ:{{ amount }} )",
+
+  "footer_quality": "უმაღლესი ხარისხი",
+  "footer_quality_desc": "დამზადებული უმაღლესი ხარისხის მატერიისგან",
+  "footer_waranty": "საგარანტიო დაზღვევა",
+  "footer_waranty_desc": "2 წლამდე",
+  "footer_delivery": "უფასო მიწოდება",
+  "footer_delivery_desc": "200+ ლარის შენაძენის შემთხვევაში",
+  "footer_support": "8 / 5 კონტაქტი",
+  "footer_support_desc": "ჩვენი საკონტაქტო ფორმის დახმარებით",
+
+  "cart_total": "ჯამური თანხა: {{amount}}$",
+
+  "search_placeholder": "მოძებნეთ სასურველი ავეჯი...",
+  "home_our_products": "ჩვენი პროდუქტები",
+  "choose_filter": "აირჩიეთ ფილტრი"
+}

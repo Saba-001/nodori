@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { products } from "/data";
 
@@ -10,6 +11,8 @@ export const Navigation = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
@@ -40,7 +43,7 @@ export const Navigation = () => {
         <div className="relative w-full max-w-lg">
           <input
             type="text"
-            placeholder="მოძებნეთ სასურველი ავეჯი..."
+            placeholder={t("search_placeholder")}
             className="px-4 py-2 w-full bg-white text-gray-700 rounded-full focus:outline-none"
             value={searchTerm}
             onChange={handleSearchChange}

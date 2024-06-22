@@ -3,11 +3,18 @@ import { useNavigate, Link } from "react-router-dom";
 import { Img } from "./Img";
 import { Cart } from "./Cart";
 
+import { useTranslation } from "react-i18next";
+
 export const DashboardHeader = ({ selectedProducts, setSelectedProducts }) => {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   const handleRegister = () => {
     navigate("/register");
+  };
+
+  const changeLanguage = () => {
+    i18n.changeLanguage(i18n.language === "en" ? "ka" : "en");
   };
 
   return (
@@ -21,13 +28,13 @@ export const DashboardHeader = ({ selectedProducts, setSelectedProducts }) => {
           to="/"
           className="hover:underline active:underline font-[Satoshi-medium]"
         >
-          მთავარი
+          {t("common_main")}
         </Link>
         <Link
           to="/contact-us"
           className="hover:underline font-[Satoshi-medium]"
         >
-          დაგვიკავშირდით
+          {t("common_contact_us")}
         </Link>
       </div>
       <div className="flex items-center mr-8 gap-8">
@@ -38,6 +45,11 @@ export const DashboardHeader = ({ selectedProducts, setSelectedProducts }) => {
         <button className="focus:outline-none" onClick={handleRegister}>
           <Img name="Register" alt="Account" className="h-8 w-8" />
         </button>
+        <div className="relative">
+          <button className="focus:outline-none" onClick={changeLanguage}>
+            {i18n.language === "en" ? "🇺🇸" : "🇬🇪"}
+          </button>
+        </div>
       </div>
     </header>
   );

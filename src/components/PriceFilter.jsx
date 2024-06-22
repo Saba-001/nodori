@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export const PriceFilter = ({ priceRange, onChange }) => {
+  const { t } = useTranslation();
+
   const handlePriceChange = (min, max) => {
     onChange([min, max]);
   };
@@ -7,7 +11,7 @@ export const PriceFilter = ({ priceRange, onChange }) => {
     <div className="flex items-center space-x-2 p-2 border bg-white rounded min-h-11 h-11">
       <div className="flex items-center">
         <label htmlFor="min-price" className="text-sm font-semibold">
-          მინ:
+          {t("common_min")}
         </label>
         <input
           id="min-price"
@@ -29,7 +33,7 @@ export const PriceFilter = ({ priceRange, onChange }) => {
       </div>
       <div className="flex items-center">
         <label htmlFor="max-price" className="text-sm font-semibold">
-          მაქს:
+          {t("common_max")}
         </label>
         <input
           id="max-price"

@@ -1,5 +1,7 @@
-import { Img } from "./Img";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next";
+
+import { Img } from "./Img";
 
 export const Product = ({
   id,
@@ -13,6 +15,8 @@ export const Product = ({
   amountInCart,
   addToCart,
 }) => {
+  const { t } = useTranslation();
+
   const settings = {
     dots: true,
     infinite: true,
@@ -62,7 +66,7 @@ export const Product = ({
           isOnSale ? "bg-green-500" : "bg-red-500"
         }`}
       >
-        {isOnSale ? "მარაგშია" : "გაყიდულია"}
+        {isOnSale ? t("common_in_stock") : t("common_sold")}
       </div>
 
       <div className="flex-grow">
@@ -84,15 +88,15 @@ export const Product = ({
             className="bg-brown text-white py-2 px-2 rounded-md hover:bg-nextPrevBg hover:text-nextPrevText flex-grow"
           >
             {amountInCart > 0
-              ? `დაამატე ( სულ:${amountInCart} )`
-              : "დაამატე კალათაში"}
+              ? t("product_add_another_to_cart", { amount: amountInCart })
+              : t("product_add_to_cart")}
           </button>
           {amountInCart > 0 && (
             <button
               onClick={handleRemoval}
               className="bg-red-500 text-white py-2 px-2 rounded-md hover:bg-red-600"
             >
-              წაშალე
+              {t("common_remove")}
             </button>
           )}
           {amountInCart > 1 && (
@@ -100,7 +104,7 @@ export const Product = ({
               onClick={handleClear}
               className="bg-red-500 text-white py-2 px-2 rounded-md hover:bg-red-600"
             >
-              წაშალე ყველა
+              {t("common_remove_all")}
             </button>
           )}
         </div>
