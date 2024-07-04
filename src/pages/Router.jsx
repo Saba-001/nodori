@@ -34,7 +34,6 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-  { basename: "/nodori/" },
 ]);
 
 export const Router = () => {
