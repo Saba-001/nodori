@@ -34,7 +34,6 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-  { basename: import.meta.env.VITE_BASE_URL || "/" },
 ]);
 
 export const Router = () => {
